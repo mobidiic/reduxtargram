@@ -4,7 +4,9 @@
   "description": "tutorial coures of redux by wes bos",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --hot --mode development --config webpack.config.dev.js",
+    "build": "webpack --mode production --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
     "react": "16.5.2",
     "react-dom": "16.5.2",
     "react-redux": "5.0.7",
+    "react-router": "4.3.1",
     "redux": "4.0.0"
   },
   "devDependencies": {
@@ -30,11 +33,13 @@
     "babel-loader": "8.0.4",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-polyfill": "6.26.0",
+    "classnames": "2.2.6",
     "clean-webpack-plugin": "0.1.19",
     "css-loader": "1.0.0",
     "file-loader": "2.0.0",
     "html-webpack-plugin": "3.2.0",
     "node-sass": "4.9.3",
+    "open-color": "1.6.3",
     "postcss-loader": "3.0.0",
     "prop-types": "15.6.2",
     "sass-loader": "7.1.0",

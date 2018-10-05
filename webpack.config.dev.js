@@ -77,7 +77,7 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({
-            title: 'REDUXTARGRAM',
+            title: 'REDUXTARGRM',
             inject: false,
             hash: true,
             template: './src/index.html',
