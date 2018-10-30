@@ -8,17 +8,30 @@ const cx = classNames.bind(styles)
 
 class Photo extends Component {
   render() {
-    const { comments, posts } = this.props
+    const { comments, post, i } = this.props
     return (
       <figure className={'grid-figure'}>
         <div className={'grid-photo-wrap'}>
-          {/* <Link to={`/view/${[posts.id]}`}>
-            <img src={posts.display_src} alt={posts.caption} className={cx('grid-photo')} />
-            <CSSTransitionGroup transitionName={like} transitionEnterTimeout={500} transitionLeaveTimeout={500} >
-              <span key={posts.likes} className='likes-heart'>{posts.likes}</span>
-            </CSSTransitionGroup>
-          </Link> */}
+          <Link to={`/view/${[post.id]}`}>
+            <img src={post.display_src} alt={post.caption} className='grid-photo' />
+          </Link>
+          <CSSTransitionGroup transitionName={'like'} transitionEnterTimeout={500} transitionLeaveTimeout={500} >
+              <span key={post.likes} className='likes-heart'>{post.likes}</span>
+          </CSSTransitionGroup>
         </div>
+
+        <figcaption>
+          <p>{post.caption}</p>
+          <div className='control-buttons'>
+            <button onClick={this.props.increment.bind(null, i)} className="likes">&hearts; {post.likes}</button>
+            <Link to={`/view/${post.id}`} className="button" >
+              <span className="comment-count">
+                <span className="speech-bubble"></span>
+                {comments[post.code] ? comments[post.code].length : 0}
+              </span>
+            </Link>
+          </div>
+        </figcaption>
       </figure>
     )
   }

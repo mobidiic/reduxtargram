@@ -9,7 +9,7 @@ class PhotoGridContainer extends Component{
     render(){
         const { posts, comments } = this.props
         return(
-            <PhotoGrid posts={posts} comments={comments} />
+            <PhotoGrid posts={posts} comments={comments} {...this.props} />
         )
     }
 }

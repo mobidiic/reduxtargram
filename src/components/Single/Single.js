@@ -1,13 +1,23 @@
-import React from 'react'
-import styles from './Single.scss'
-import classNames from 'classnames/bind'
+import React, { Component } from 'react'
+import './Single.scss'
+import Comments from '../Comments'
+import Photo from '../Photo'
 
-const cx = classNames.bind(styles)
 
-const Single = () => (
-  <div className={cx('single__photo')}>
-    Single
-  </div>
-);
+class Single extends Component{
+  render(){
+    const { postId } = this.props.params
+    const i = this.props.posts.findIndex( post => post.code === postId)
+    const post = this.props.posts[i]
+    const postComments = this.props.comments[postId] || []
+    return(
+      <div className="single-photo">
+        <Photo i={i} post={post} {...this.props} />
+        <Comments postComments={postComments} />
+      </div>
+    )
+  }
+}
+
 
 export default Single

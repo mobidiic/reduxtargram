@@ -9,7 +9,7 @@ class PhotoGrid extends Component{
   render(){
   return(
     <div className={cx('photo-grid')}>
-        {this.props.posts.map((post, i)=> <Photo key={i} i={i} {...this.props} />)}
+        {this.props.posts.map((post, i)=> <Photo key={i} i={i} post={post} {...this.props} />)}
     </div>
   )}
 };
