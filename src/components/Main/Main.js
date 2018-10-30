@@ -7,12 +7,13 @@ const cx=ClassNames.bind(styles)
 
 class Main extends Component{
     render(){
+        const { children } = this.props
         return(
             <div className={cx('main__title')}>
                 <h1>
                     <Link to="/">Reduxtargram</Link>
                 </h1>
-                {React.cloneElement(this.props.children, this.props)}
+                {children}
             </div>
         )
     }

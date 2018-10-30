@@ -3,9 +3,9 @@ import { render } from 'react-dom'
 import { Router, Route, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store, { history } from './store'
-import App from './components/App'
+import App from './containers/App'
 import Single from './components/Single'
-import PhotoGrid from './components/PhotoGrid'
+import PhotoGridContainer from './containers/PhotoGridContainer'
 import '../stylesheets/globals.scss'
 
 window.React = React
@@ -15,8 +15,8 @@ render(
         <Router history={history}>
             <App>
                 <Switch>
-                    <Route path="/" component={PhotoGrid}></Route>
-                    <Route path="/view/:postId" component={Single}></Route>
+                    <Route path="/"><PhotoGridContainer /></Route>
+                    <Route path="/view/:postId"><Single /></Route>
                 </Switch>
             </App>
         </Router>
