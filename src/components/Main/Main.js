@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import styles from './Main.scss'
-import ClassNames from 'classnames/bind'
 
-const cx=ClassNames.bind(styles)
 
 class Main extends Component{
     render(){
         const { children } = this.props
         return(
-            <div className={cx('main__title')}>
+            <div className='main-title'>
                 <h1>
                     <Link to="/">Reduxtargram</Link>
                 </h1>
+                <h2>
+                    <Link to="/view/BAcJeJrQca9" ><button>test</button></Link>
+                </h2>
                 {children}
             </div>
         )
